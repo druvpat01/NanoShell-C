@@ -1,3 +1,6 @@
 .vscode
 temp.c
 *.exe
+*.o
+obj
+bin
