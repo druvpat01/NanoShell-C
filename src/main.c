@@ -10,31 +10,22 @@
 // Error Handling
 
 
-// cd, pwd, echo, env, setenv, unsetenv, which, exit
+//Built-ins: cd, pwd, echo, env, setenv, unsetenv, which, exit
+// Binary: ls, cat.. we will use exexutor.
 int shell_builts(char** args, char** env, char* initial_dir){
-    (void)env;
-    (void)initial_dir;
+
     /* Handling built in commands*/
-    printf("Args[0]: %s\n", args[0]);
-    if(my_strcmp(args[0], "cd") == 0){
-        printf("CD\n");
-    }
-        // return command_cd(args, intital_dir);
+    if(my_strcmp(args[0], "cd") == 0)
+        return command_cd(args, initial_dir);
 
-    else if(my_strcmp(args[0], "pwd") == 0){
-        printf("PWD\n");
-    }
-        // return command_pwd();
+    else if(my_strcmp(args[0], "pwd") == 0)
+        return command_pwd();
 
-    else if(my_strcmp(args[0], "echo") == 0){
-        printf("ECHO\n");
-    }
-        // return command_echo(args, env);
+    else if(my_strcmp(args[0], "echo") == 0)
+        return command_echo(args, env);
 
-    else if(my_strcmp(args[0], "env") == 0){
-        printf("ENV\n");
-    }
-        // return command_env(env);
+    else if(my_strcmp(args[0], "env") == 0)
+        return command_env(env);
     
     else if(my_strcmp(args[0], "setenv") == 0){
         printf("SETENV\n");
